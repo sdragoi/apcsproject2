@@ -7,7 +7,10 @@ public class Book {
 	public String genre;
 	
 	public Book (String title, String author, String genre, boolean isHardcover) {
-		
+		this.title = title;
+		this.author = author;
+		this.genre = genre;
+		this.isHardcover = isHardcover;
 	}
 
 }
