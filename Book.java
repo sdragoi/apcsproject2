@@ -1,3 +1,6 @@
+//Stephanie Dragoi, Danielle White
+//20220415
+//APCS Project #2-- Book class
 
 public class Book {
 	

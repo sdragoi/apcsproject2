@@ -1,3 +1,7 @@
+//Stephanie Dragoi, Danielle White
+//20220415
+//APCS Project #2-- Student class
+
 import java.util.ArrayList;
 
 public class Student {
@@ -5,20 +9,20 @@ public class Student {
 	public String lastName;
 	public String firstName;
 	public double gpa;
-	public int scoreOnReportOutOf25;
+	public int gradeInClass;
 	public String favSubject;
 	
-	public Student (String lastName, String firstName, int scoreOnReportOutOf25, String favSubject, double gpa) {
+	public Student (String lastName, String firstName, int gradeInClass, String favSubject, double gpa) {
 		this.lastName = lastName;
 		this.firstName = firstName;
-		this.scoreOnReportOutOf25 = scoreOnReportOutOf25;
+		this.gradeInClass = gradeInClass;
 		this.favSubject = favSubject;
 		this.gpa = gpa;
 	}
 	
-	public static void sortStudentsByLastName(ArrayList<Student> studentList) {
+	public static void sortStudentsby (ArrayList<Student> studentList) {
 		for (int i = 0; i < studentList.size(); i++) {
-			if
+			
 		}
 	}
 
