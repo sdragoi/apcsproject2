@@ -103,9 +103,9 @@ public class Tester {
 				  englishClass.add(new Student("Young"	, "George" ,	53	, "Humanities"	, 3.2));
 
 				Class english = new Class(englishClass);
-				english.sortByLastName(englishClass);
+				english.sortByGPAIncreasing(englishClass);
 				for (int i = 0; i< englishClass.size(); i++) {
-					System.out.println(englishClass.get(i).lastName);
+					System.out.println(englishClass.get(i).gpa + " " + englishClass.get(i).lastName);
 				}
 	}
 

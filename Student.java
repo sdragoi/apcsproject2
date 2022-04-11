@@ -21,12 +21,12 @@ public class Student {
 	}
 	
 	public static void sortStudentsby (ArrayList<Student> studentList) {
-		for (int i = 0; i < studentList.size(); i++) {
+		for (int i = 0; i < studentList.size( ); i++) {
 			
 		}
 		
 	}
 	
-	public static void
+
 
 }
