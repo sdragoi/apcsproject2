@@ -30,5 +30,29 @@ public class Library {
          }
          return books;
      }
+	public ArrayList<Book> sortByAuthor(ArrayList<Book> books){
+         for (int i = 0; i < books.size(); i++) {
+             for (int j = 0; j < books.size() - 1; j++) {
+                 if (books.get(j).author.charAt(0) > books.get(j + 1).author.charAt(0)) {
+                     Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+                 } else if ((books.get(j).author.charAt(0) == books.get(j + 1).author.charAt(0))) {
+                     if (books.get(j).author.charAt(1) > books.get(j + 1).author.charAt(1)) {
+                         Book temp = books.set(j, books.get(j + 1));
+                         books.set(j + 1, temp);
+                     } else if (books.get(j).author.charAt(1) == books.get(j + 1).author.charAt(1)) {
+                         if (books.get(j).author.charAt(2) > books.get(j + 1).author.charAt(2)) {
+                             Book temp = books.set(j, books.get(j + 1));
+                             books.set(j + 1, temp);
+                         }
+                     }
+
+                 }
+             }
+
+         }
+         return books;
+
+     }
 
 }
