@@ -12,24 +12,25 @@ public class Class {
 		this.classroom = classroom;
 	}
 	
-	public ArrayList<Student> sortBy(String studentAttribute){
-		//lastName;
-		//firstName;
-		//gpa;
-		//gradeInClass;
-		//favSubject;
-		//E set(int index, E obj) Replaces the element at position index with obj; returns the element formerly at position index
+	public void sortBy(String studentAttribute){
 		
 		switch (studentAttribute) {
 		case "lastName":
-			
+			this.sortByLastName(classroom);
+			break;
 		case "firstName":
+			this.sortByFirstName(classroom);
+			break;
 		case "gpa":
+			this.sortByGPAIncreasing(classroom);
+			break;
 		case"gradeInClass":
+			this.sortByGradeIncreasing(classroom);
+			break;
 		case "favSubject": 
+			this.sortByFavSubjectAlpha(classroom);
+			break;
 		}
-		return classroom;
-		
 	}
 	
 	
@@ -88,6 +89,32 @@ public class Class {
 		for (int i = 0; i < students.size(); i++ ) {
 			for (int j = 0; j < students.size() - 1; j++) {
 				if (students.get(j).gpa > students.get(j + 1).gpa){
+					Student temp = students.set(j, students.get(j + 1));
+					students.set(j + 1, temp);
+				}
+
+			}
+		}	
+		return students;
+	}
+	
+	public ArrayList<Student> sortByGradeIncreasing(ArrayList<Student> students){
+		for (int i = 0; i < students.size(); i++ ) {
+			for (int j = 0; j < students.size() - 1; j++) {
+				if (students.get(j).gradeInClass > students.get(j + 1).gradeInClass){
+					Student temp = students.set(j, students.get(j + 1));
+					students.set(j + 1, temp);
+				}
+
+			}
+		}	
+		return students;
+	}
+	
+	public ArrayList<Student> sortByFavSubjectAlpha(ArrayList<Student> students){
+		for (int i = 0; i < students.size(); i++ ) {
+			for (int j = 0; j < students.size() - 1; j++) {
+				if (students.get(j).favSubject.charAt(0) > students.get(j + 1).favSubject.charAt(0)){
 					Student temp = students.set(j, students.get(j + 1));
 					students.set(j + 1, temp);
 				}

@@ -10,6 +10,12 @@ public class Tester {
 		
 		ArrayList <Book> library = new ArrayList <Book>(43);
 		ArrayList <Student> englishClass = new ArrayList <Student>(43);
+		
+		Class english = new Class(englishClass);
+		english.sortBy("lastName");
+		for (int i = 0; i< englishClass.size(); i++) {
+			System.out.println(englishClass.get(i).favSubject + " " + englishClass.get(i).lastName);
+		}
 					
 		//populate library
 				  library.add(new Book("The Red Pyramid", "Rick Riordan", "Fantasy"	, true));
@@ -102,11 +108,7 @@ public class Tester {
 				  englishClass.add(new Student("Robinson"	, "Brian", 69	, "Humanities"	, 3.0));
 				  englishClass.add(new Student("Young"	, "George" ,	53	, "Humanities"	, 3.2));
 
-				Class english = new Class(englishClass);
-				english.sortByGPAIncreasing(englishClass);
-				for (int i = 0; i< englishClass.size(); i++) {
-					System.out.println(englishClass.get(i).gpa + " " + englishClass.get(i).lastName);
-				}
+				
 	}
 
 }
