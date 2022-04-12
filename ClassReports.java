@@ -42,11 +42,23 @@ public class ClassReports {
 	 */
 	
 	
-	public void Assign(ArrayList<Student> classroom, ArrayList<Book> library, String studentAttribute, String bookAttribute){
+	public void Assign(Class classroom, Library library, String studentAttribute, String bookAttribute){
 			
 			switch (studentAttribute) {
 			case "lastName":
-				this.sortbylastName())
+				switch (bookAttribute) {
+				case "title":
+					classroom.sortByLastName(classroom.classroom);
+					library.sortByTitle(library.library);
+					break;
+				case "author":
+					break;
+				case "isHardcover":
+					break;
+				case "genre":
+					break;
+				}
+				
 				break;
 			case "firstName":
 				this.sortByFirstName(classroom);

@@ -110,6 +110,13 @@ public class Tester {
 			System.out.println(englishClass.get(i).favSubject + " " + englishClass.get(i).lastName);
 		}
 		
+		Library bookstore = new Library(library);
+		bookstore.sortByTitle(library);
+		for (int j = 0; j < library.size(); j++) {
+			System.out.println(library.get(j).title);
+		}
+		
+		
 		Scanner input = new Scanner(System.in);
 		int runs;
 		do {
