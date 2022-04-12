@@ -3,6 +3,7 @@
 //APCS Project #2-- Tester class
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Tester {
 
@@ -11,11 +12,6 @@ public class Tester {
 		ArrayList <Book> library = new ArrayList <Book>(43);
 		ArrayList <Student> englishClass = new ArrayList <Student>(43);
 		
-		Class english = new Class(englishClass);
-		english.sortBy("lastName");
-		for (int i = 0; i< englishClass.size(); i++) {
-			System.out.println(englishClass.get(i).favSubject + " " + englishClass.get(i).lastName);
-		}
 					
 		//populate library
 				  library.add(new Book("The Red Pyramid", "Rick Riordan", "Fantasy"	, true));
@@ -108,6 +104,35 @@ public class Tester {
 				  englishClass.add(new Student("Robinson"	, "Brian", 69	, "Humanities"	, 3.0));
 				  englishClass.add(new Student("Young"	, "George" ,	53	, "Humanities"	, 3.2));
 
+		Class english = new Class(englishClass);
+		english.sortBy("lastName");
+		for (int i = 0; i< englishClass.size(); i++) {
+			System.out.println(englishClass.get(i).favSubject + " " + englishClass.get(i).lastName);
+		}
+		
+		Scanner input = new Scanner(System.in);
+		int runs;
+		do {
+		    System.out.println("Please specify either 1, 5, or 10 million runs by inputting 1, 5, or 10. ");
+		    while (!input.hasNextInt()) {
+		        System.out.println("Not an integer. ");
+		        input.next(); 
+		    }
+		    runs = input.nextInt();
+		    if (runs == 1 || runs == 5 || runs == 10)
+		    	break;
+		} while (runs != 1 || runs != 5 || runs != 10); 
+		
+		Scanner target = new Scanner(System.in);
+		Long targetPattern;
+		do {
+			System.out.println("Please provide a target digit pattern between 6 and 12 digits. ");
+			while (!target.hasNextLong()) {
+				System.out.println("Your target pattern should only contain the digits 0-9. ");
+				target.next();
+			}
+			targetPattern = target.nextLong();
+		} while (targetPattern.toString().length() > 12 || targetPattern.toString().length() < 6);
 				
 	}
 
