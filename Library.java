@@ -71,5 +71,34 @@ public class Library {
          return books;
 
      }
+	public ArrayList<Book> sortByGenre(ArrayList<Book> books) {
+         for (int i = 0; i < books.size()-1; i++) {
+             for (int j = 0; j < books.size() - 1; j++) {
+                 if (books.get(j).genre.charAt(0) > books.get(j + 1).genre.charAt(0)) {
+                     Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+                 } else if ((books.get(j).genre.charAt(0) == books.get(j + 1).genre.charAt(0))) {
+                     if (books.get(j).genre.charAt(1) > books.get(j + 1).genre.charAt(1)) {
+                         Book temp = books.set(j, books.get(j + 1));
+                         books.set(j + 1, temp);
+                     } else if (books.get(j).genre.charAt(1) == books.get(j + 1).genre.charAt(1)) {
+                         if (books.get(j).genre.charAt(2) > books.get(j + 1).genre.charAt(2)) {
+                             Book temp = books.set(j, books.get(j + 1));
+                             books.set(j + 1, temp);
+                         }
+                     }
+
+                 }
+             }
+
+         }
+                 //sci fi, non fiction, biography, history, fiction, fantasy, romance
+
+             //public ArrayList<Book> isHardCover(ArrayList<Book> books){
+             //put in an array and sort whether true or false?
+
+             // }
+         return books;
+     }
 
 }
