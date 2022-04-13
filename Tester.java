@@ -117,9 +117,9 @@ public class Tester {
 		//}
 		
 		ClassReports assignment1 = new ClassReports();
-		assignment1.Assign(english, bookstore, "lastName", "title");
+		assignment1.Assign(english, bookstore, "firstName", "title");
 		for (int i = 0; i < englishClass.size(); i++) {
-			System.out.println("Student: " + assignment1.classReports.get(i).student.lastName + "//" + assignment1.classReports.get(i).book.title);
+			System.out.println("Student: " + assignment1.classReports.get(i).student.firstName + "//" + assignment1.classReports.get(i).book.title);
 		}
 		
 		

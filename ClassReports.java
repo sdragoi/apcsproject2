@@ -59,6 +59,55 @@ public class ClassReports {
 					}
 					break;
 				case "author":
+					classroom.sortByLastName(classroom.classroom);
+					library.sortByAuthor(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "isHardcover":
+					break;
+				case "genre":
+					break;
+				}
+				break;
+			case "firstName":
+				switch (bookAttribute) {
+				case "title":
+					classroom.sortByFirstName(classroom.classroom);
+					library.sortByTitle(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "author":
+					classroom.sortByFirstName(classroom.classroom);
+					library.sortByAuthor(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "isHardcover":
+					break;
+				case "genre":
+					break;
+				}
+				break;
+			case "gpa":
+				switch (bookAttribute) {
+				case "title":
+					classroom.sortByGPAIncreasing(classroom.classroom);
+					library.sortByTitle(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "author":
+					classroom.sortByGPAIncreasing(classroom.classroom);
+					library.sortByAuthor(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
 					break;
 				case "isHardcover":
 					break;
@@ -66,12 +115,6 @@ public class ClassReports {
 					break;
 				}
 				
-				break;
-			case "firstName":
-				//this.sortByFirstName(classroom);
-				break;
-			case "gpa":
-				//this.sortByGPAIncreasing(classroom);
 				break;
 			case"gradeInClass":
 				//this.sortByGradeIncreasing(classroom);
