@@ -3,6 +3,7 @@
 //APCS Project #2-- Class class
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Class {
 
@@ -57,7 +58,9 @@ public class Class {
 				}
 			}	
 		}
+		
 		return students;
+		
 	}
 	
 	public ArrayList<Student> sortByFirstName(ArrayList<Student> students){

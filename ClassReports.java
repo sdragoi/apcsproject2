@@ -8,6 +8,10 @@ public class ClassReports {
 		this.classReports = classReports;
 	}
 	
+	public ClassReports() {
+		this.classReports = new ArrayList<Report>(43);
+	}
+	
 	//public String lastName;
 	//public String firstName;
 	//public double gpa;
@@ -50,6 +54,9 @@ public class ClassReports {
 				case "title":
 					classroom.sortByLastName(classroom.classroom);
 					library.sortByTitle(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
 					break;
 				case "author":
 					break;
@@ -61,16 +68,16 @@ public class ClassReports {
 				
 				break;
 			case "firstName":
-				this.sortByFirstName(classroom);
+				//this.sortByFirstName(classroom);
 				break;
 			case "gpa":
-				this.sortByGPAIncreasing(classroom);
+				//this.sortByGPAIncreasing(classroom);
 				break;
 			case"gradeInClass":
-				this.sortByGradeIncreasing(classroom);
+				//this.sortByGradeIncreasing(classroom);
 				break;
 			case "favSubject": 
-				this.sortByFavSubjectAlpha(classroom);
+				//this.sortByFavSubjectAlpha(classroom);
 				break;
 			}
 		}

@@ -13,23 +13,40 @@ public class Library {
                  if (books.get(j).title.charAt(0) > books.get(j + 1).title.charAt(0)) {
                      Book temp = books.set(j, books.get(j + 1));
                      books.set(j + 1, temp);
-                 } else if ((books.get(j).title.charAt(0) == books.get(j + 1).title.charAt(0))) {
-                     if (books.get(j).title.charAt(1) > books.get(j + 1).title.charAt(1)) {
+                 } 
+                 else if ((books.get(j).title.charAt(0) == books.get(j + 1).title.charAt(0))) {
+                	 //
+                     // to order books if title starts with "the"
+                	 if ((books.get(j).title.substring(0, 2)).equals(books.get(j + 1).title.substring(0,2))) {
+                    	 if (books.get(j).title.charAt(4) > books.get(j + 1).title.charAt(4)) {
+                             Book temp = books.set(j, books.get(j + 1));
+                             books.set(j + 1, temp);
+                         } 
+                    	 else if ((books.get(j).title.charAt(4) == books.get(j + 1).title.charAt(4))) {
+                             if (books.get(j).title.charAt(5) > books.get(j + 1).title.charAt(5)) {
+                                 Book temp = books.set(j, books.get(j + 1));
+                                 books.set(j + 1, temp);
+                             }
+                         }
+                     }
+                	 else if (books.get(j).title.charAt(1) > books.get(j + 1).title.charAt(1)) {
                          Book temp = books.set(j, books.get(j + 1));
                          books.set(j + 1, temp);
-                     } else if (books.get(j).title.charAt(1) == books.get(j + 1).title.charAt(1)) {
+                     } 
+                     else if (books.get(j).title.charAt(1) == books.get(j + 1).title.charAt(1)) {
                          if (books.get(j).title.charAt(2) > books.get(j + 1).title.charAt(2)) {
                              Book temp = books.set(j, books.get(j + 1));
                              books.set(j + 1, temp);
                          }
                      }
-
                  }
              }
 
          }
+         
          return books;
-     }
+	 }
+
 	public ArrayList<Book> sortByAuthor(ArrayList<Book> books){
          for (int i = 0; i < books.size(); i++) {
              for (int j = 0; j < books.size() - 1; j++) {

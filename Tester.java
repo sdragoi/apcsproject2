@@ -105,15 +105,21 @@ public class Tester {
 				  englishClass.add(new Student("Young"	, "George" ,	53	, "Humanities"	, 3.2));
 
 		Class english = new Class(englishClass);
-		english.sortBy("lastName");
-		for (int i = 0; i< englishClass.size(); i++) {
-			System.out.println(englishClass.get(i).favSubject + " " + englishClass.get(i).lastName);
-		}
+		//english.sortBy("lastName");
+		//for (int i = 0; i< englishClass.size(); i++) {
+			//System.out.println(englishClass.get(i).favSubject + " " + englishClass.get(i).lastName);
+		//}
 		
 		Library bookstore = new Library(library);
-		bookstore.sortByTitle(library);
-		for (int j = 0; j < library.size(); j++) {
-			System.out.println(library.get(j).title);
+		//bookstore.sortByTitle(library);
+		//for (int j = 0; j < library.size(); j++) {
+			//System.out.println(library.get(j).title);
+		//}
+		
+		ClassReports assignment1 = new ClassReports();
+		assignment1.Assign(english, bookstore, "lastName", "title");
+		for (int i = 0; i < englishClass.size(); i++) {
+			System.out.println("Student: " + assignment1.classReports.get(i).student.lastName + "//" + assignment1.classReports.get(i).book.title);
 		}
 		
 		
