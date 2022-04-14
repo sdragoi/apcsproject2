@@ -114,13 +114,50 @@ public class ClassReports {
 				case "genre":
 					break;
 				}
-				
 				break;
 			case"gradeInClass":
-				//this.sortByGradeIncreasing(classroom);
+				switch (bookAttribute) {
+				case "title":
+					classroom.sortByGradeIncreasing(classroom.classroom);
+					library.sortByTitle(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "author":
+					classroom.sortByGradeIncreasing(classroom.classroom);
+					library.sortByAuthor(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "isHardcover":
+					break;
+				case "genre":
+					break;
+				}
 				break;
 			case "favSubject": 
-				//this.sortByFavSubjectAlpha(classroom);
+				switch (bookAttribute) {
+				case "title":
+					classroom.sortByFavSubjectAlpha(classroom.classroom);
+					library.sortByTitle(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "author":
+					classroom.sortByFavSubjectAlpha(classroom.classroom);
+					library.sortByAuthor(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
+					break;
+				case "isHardcover":
+					break;
+				case "genre":
+					break;
+				}
 				break;
 			}
 		}

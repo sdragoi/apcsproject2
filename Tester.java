@@ -124,17 +124,65 @@ public class Tester {
 		
 		
 		Scanner input = new Scanner(System.in);
-		int runs;
+		String action;
 		do {
-		    System.out.println("Please specify either 1, 5, or 10 million runs by inputting 1, 5, or 10. ");
-		    while (!input.hasNextInt()) {
-		        System.out.println("Not an integer. ");
+		    System.out.println("Would you like to sort a class, sort a library, or assign books to students for a report? Please reply with c, b, or r. ");
+		    while (!input.hasNext()) {
+		        System.out.println("Please reply with c, b, or r. ");
 		        input.next(); 
 		    }
-		    runs = input.nextInt();
-		    if (runs == 1 || runs == 5 || runs == 10)
+		    action = input.next();
+		    if (action.equalsIgnoreCase("c") || action.equalsIgnoreCase("b") || action.equalsIgnoreCase("r"))
 		    	break;
-		} while (runs != 1 || runs != 5 || runs != 10); 
+		} while (!(action.equalsIgnoreCase("c") || action.equalsIgnoreCase("b") || action.equalsIgnoreCase("r"))); 
+		
+		if (action.equalsIgnoreCase("c")) {
+			Scanner studentSortBy = new Scanner(System.in);
+			String sortBy;
+			do {
+			    System.out.println("Would you like to sort by last name, first name, GPA, grade in the class, or favorite subject? Please reply with ln, fn, gpa, gr, or sub. ");
+			    while (!input.hasNext()) {
+			        System.out.println("Please reply with ln, fn, gpa, gr, or sub. ");
+			        input.next(); 
+			    }
+			    sortBy = input.next();
+			    if (sortBy.equalsIgnoreCase("ln") || sortBy.equalsIgnoreCase("fn") || sortBy.equalsIgnoreCase("gpa") || sortBy.equalsIgnoreCase("gr") || sortBy.equalsIgnoreCase("sub"))
+			    	break;
+			} while (!(sortBy.equalsIgnoreCase("ln") || sortBy.equalsIgnoreCase("fn") || sortBy.equalsIgnoreCase("gpa") || sortBy.equalsIgnoreCase("gr") || sortBy.equalsIgnoreCase("sub"))); 
+		
+			switch(sortBy) {
+			case "ln":
+				english.sortBy("lastName");
+				for (int i = 0; i< englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " + englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " + englishClass.get(i).favSubject);
+				}
+				break;
+			case "fn":
+				english.sortBy("firstName");
+				for (int i = 0; i< englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " + englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " + englishClass.get(i).favSubject);
+				}
+				break;
+			case "gpa":
+				english.sortBy("gpa");
+				for (int i = 0; i< englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " + englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " + englishClass.get(i).favSubject);
+				}
+				break;
+			case "gr":
+				english.sortBy("gradeInClass");
+				for (int i = 0; i< englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " + englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " + englishClass.get(i).favSubject);
+				}
+				break;
+			case "sub":
+				english.sortBy("favSubject");
+				for (int i = 0; i< englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " + englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " + englishClass.get(i).favSubject);
+				}
+				break;
+			}
+		}
 		
 		Scanner target = new Scanner(System.in);
 		Long targetPattern;
