@@ -90,6 +90,11 @@ public class ClassReports {
 				case "isHardcover":
 					break;
 				case "genre":
+					classroom.sortByFirstName(classroom.classroom);
+					library.sortByGenre(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
 					break;
 				}
 				break;
@@ -112,6 +117,11 @@ public class ClassReports {
 				case "isHardcover":
 					break;
 				case "genre":
+					classroom.sortByGPAIncreasing(classroom.classroom);
+					library.sortByGenre(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
 					break;
 				}
 				break;
@@ -134,6 +144,11 @@ public class ClassReports {
 				case "isHardcover":
 					break;
 				case "genre":
+					classroom.sortByGradeIncreasing(classroom.classroom);
+					library.sortByGenre(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
 					break;
 				}
 				break;
@@ -156,6 +171,11 @@ public class ClassReports {
 				case "isHardcover":
 					break;
 				case "genre":
+					classroom.sortByFavSubjectAlpha(classroom.classroom);
+					library.sortByGenre(library.library);
+					for (int i = 0; i < classroom.classroom.size(); i++) {
+						this.classReports.add(new Report(classroom.classroom.get(i), library.library.get(i)));
+					}
 					break;
 				}
 				break;

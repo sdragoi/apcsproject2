@@ -7,6 +7,25 @@ public class Library {
 	public Library(ArrayList<Book> library) {
 		this.library = library; 
 	}
+	
+	public void sortBy(String bookAttribute){
+		
+		switch (bookAttribute) {
+		case "title":
+			this.sortByAuthor(library);
+			break;
+		case "author":
+			this.sortByAuthor(library);
+			break;
+		case "isHardcover":
+			break;
+		case"genre":
+			this.sortByGenre(library);
+			break;
+		}
+	}
+	
+	
 	 public ArrayList<Book> sortByTitle(ArrayList<Book> books) {
          for (int i = 0; i < books.size(); i++) {
              for (int j = 0; j < books.size() - 1; j++) {

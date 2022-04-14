@@ -184,6 +184,47 @@ public class Tester {
 			}
 		}
 		
+		if (action.equalsIgnoreCase("b")) {
+			Scanner librarySortBy = new Scanner(System.in);
+			String sortBy;
+			do {
+			    System.out.println("Would you like to sort by title, author, is hardcover, or genre? Please reply with t, a, h, or g. ");
+			    while (!input.hasNext()) {
+			        System.out.println("Please reply with t, a, h, or g. ");
+			        input.next(); 
+			    }
+			    sortBy = input.next();
+			    if (sortBy.equalsIgnoreCase("t") || sortBy.equalsIgnoreCase("a") || sortBy.equalsIgnoreCase("h") || sortBy.equalsIgnoreCase("g"))
+			    	break;
+			} while (!(sortBy.equalsIgnoreCase("t") || sortBy.equalsIgnoreCase("a") || sortBy.equalsIgnoreCase("h") || sortBy.equalsIgnoreCase("g")));
+			switch(sortBy) {
+			case "t":
+				bookstore.sortBy("title");
+				for (int i = 0; i< library.size(); i++) {
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+				}
+				break;
+			case "a":
+				bookstore.sortBy("author");
+				for (int i = 0; i< library.size(); i++) {
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+				}
+				break;
+			case "h":
+				bookstore.sortBy("isHardcover");
+				for (int i = 0; i< library.size(); i++) {
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+				}
+				break;
+			case "g":
+				bookstore.sortBy("genre");
+				for (int i = 0; i< library.size(); i++) {
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+				}
+				break;
+			}
+		}
+		
 		Scanner target = new Scanner(System.in);
 		Long targetPattern;
 		do {
