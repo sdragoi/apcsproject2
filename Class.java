@@ -3,7 +3,6 @@
 //APCS Project #2-- Class class
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Class {
 
@@ -117,12 +116,12 @@ public class Class {
 	public ArrayList<Student> sortByFavSubjectAlpha(ArrayList<Student> students){
 		for (int i = 0; i < students.size(); i++ ) {
 			for (int j = 0; j < students.size() - 1; j++) {
-				if (students.get(j).favSubject.charAt(0) > students.get(j + 1).favSubject.charAt(0)){
+				if ((students.get(j).favSubject.toUpperCase().charAt(0)) > (students.get(j+1).favSubject.toUpperCase().charAt(0))) {
 					Student temp = students.set(j, students.get(j + 1));
-					students.set(j + 1, temp);
+					students.set((j + 1), temp);
 				}
-
 			}
+
 		}	
 		return students;
 	}

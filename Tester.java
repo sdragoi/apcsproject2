@@ -116,12 +116,6 @@ public class Tester {
 			//System.out.println(library.get(j).title);
 		//}
 		
-		ClassReports assignment1 = new ClassReports();
-		assignment1.Assign(english, bookstore, "firstName", "title");
-		for (int i = 0; i < englishClass.size(); i++) {
-			System.out.println("Student: " + assignment1.classReports.get(i).student.firstName + "//" + assignment1.classReports.get(i).book.title);
-		}
-		
 		
 		Scanner input = new Scanner(System.in);
 		String action;
@@ -274,49 +268,108 @@ public class Tester {
 				case "g":
 					bookstore.sortBy("genre");
 				}
+				for (int i = 0; i < englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " 
+							+ englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " 
+							+ englishClass.get(i).favSubject);
+					System.out.println("     Book: " + library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
+				}
 				break;
 			case "fn":
+				english.sortBy("firstName");
 				switch(assignByB) {
 				case "t":
 					bookstore.sortBy("title");
+					break;
 				case "a":
 					bookstore.sortBy("author");
+					break;
 				case "h":
 					bookstore.sortBy("isHardcover");
+					break;
 				case "g":
 					bookstore.sortBy("genre");
+					break;
+				}
+				for (int i = 0; i < englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " 
+							+ englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " 
+							+ englishClass.get(i).favSubject);
+					System.out.println("     Book: " + library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			case "gpa":
+				english.sortBy("gpa");
 				switch(assignByB) {
 				case "t":
 					bookstore.sortBy("title");
+					break;
 				case "a":
 					bookstore.sortBy("author");
+					break;
 				case "h":
 					bookstore.sortBy("isHardcover");
+					break;
 				case "g":
 					bookstore.sortBy("genre");
+					break;
+				}
+				for (int i = 0; i < englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " 
+							+ englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " 
+							+ englishClass.get(i).favSubject);
+					System.out.println("     Book: " + library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			case "gr":
+				english.sortBy("grade");
 				switch(assignByB) {
 				case "t":
 					bookstore.sortBy("title");
+					break;
 				case "a":
 					bookstore.sortBy("author");
+					break;
 				case "h":
 					bookstore.sortBy("isHardcover");
+					break;
 				case "g":
 					bookstore.sortBy("genre");
+					break;
+				}
+				for (int i = 0; i < englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " 
+							+ englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " 
+							+ englishClass.get(i).favSubject);
+					System.out.println("     Book: " + library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			case "sub":
+				english.sortBy("favSubject");
 				switch(assignByB) {
 				case "t":
+					bookstore.sortBy("title");
+					break;
 				case "a":
+					bookstore.sortBy("author");
+					break;
 				case "h":
+					bookstore.sortBy("isHardcover");
+					break;
 				case "g":
+					bookstore.sortBy("genre");
+					break;
+				}
+				for (int i = 0; i < englishClass.size(); i++) {
+					System.out.println(englishClass.get(i).lastName + ", " + englishClass.get(i).firstName + "-   GPA: " 
+							+ englishClass.get(i).gpa + ";   Grade: " + englishClass.get(i).gradeInClass + ";   Favorite subject: " 
+							+ englishClass.get(i).favSubject);
+					System.out.println("     Book: " + library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			}
