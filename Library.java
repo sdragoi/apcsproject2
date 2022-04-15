@@ -90,21 +90,29 @@ public class Library {
          return books;
 
      }
-	public ArrayList<Book> sortByGenres(ArrayList<Book> books) { //Mr. White
-         ArrayList <Book> newBooks = new ArrayList <Book>(books.size()); //43
-         String [] genres = {"History", "Biography", "Fiction", "Nonfiction","Fantasy","Romance","Sci-fi"};
-         ArrayList<Book> genress = new ArrayList<Book>(books.size());
-         for (int i= 0; i <genress.size(); i++){ //genres.length
-             for(int j = 0; j<books.size(); j++){ //
-                 if (books.get(j).genre == (genress.get(i).genre)){
-                     newBooks.add(books.get(j));
+	public void printListOfBooks(){
+         for (int i =0; i<library.size(); i++){
+             System.out.println(library.get(i).genre);
+         }
+     }
+
+     public void sortByGenresWhite() {
+         ArrayList <Book> newBooks = new ArrayList <Book>(library.size()); //43
+         String [] genres = {"History", "Biography", "Fiction", "Nonfiction","Fantasy","Romance","Sci-Fi"};
+
+         for (int i= 0; i <genres.length; i++){ //genres.length
+             for(int j = 0; j<library.size(); j++){ //
+                 if (library.get(j).genre.equals(genres[i])){
+                     newBooks.add(library.get(j));
+
                  }
              }
          }
 
 
 
-         return newBooks;
+         library=newBooks;
+
      }
 
 }
