@@ -90,7 +90,7 @@ public class Library {
          return books;
 
      }
-	public ArrayList<Book> sortByGenresDani(ArrayList<Book> books) {
+	public ArrayList<Book> sortByGenres(ArrayList<Book> books) { //Mr. White
          ArrayList <Book> newBooks = new ArrayList <Book>(books.size()); //43
          String [] genres = {"History", "Biography", "Fiction", "Nonfiction","Fantasy","Romance","Sci-fi"};
          ArrayList<Book> genress = new ArrayList<Book>(books.size());
