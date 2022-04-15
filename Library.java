@@ -91,34 +91,29 @@ public class Library {
          return books;
 
      }
-	public ArrayList<Book> sortByGenre(ArrayList<Book> books) {
-         for (int i = 0; i < books.size()-1; i++) {
-             for (int j = 0; j < books.size() - 1; j++) {
-                 if (books.get(j).genre.charAt(0) > books.get(j + 1).genre.charAt(0)) {
-                     Book temp = books.set(j, books.get(j + 1));
-                     books.set(j + 1, temp);
-                 } else if ((books.get(j).genre.charAt(0) == books.get(j + 1).genre.charAt(0))) {
-                     if (books.get(j).genre.charAt(1) > books.get(j + 1).genre.charAt(1)) {
-                         Book temp = books.set(j, books.get(j + 1));
-                         books.set(j + 1, temp);
-                     } else if (books.get(j).genre.charAt(1) == books.get(j + 1).genre.charAt(1)) {
-                         if (books.get(j).genre.charAt(2) > books.get(j + 1).genre.charAt(2)) {
-                             Book temp = books.set(j, books.get(j + 1));
-                             books.set(j + 1, temp);
-                         }
-                     }
+	public void printListOfBookGenres(){
+         for (int i =0; i<library.size(); i++){
+             System.out.println(library.get(i).genre);
+         }
+     }
+
+     public void sortByGenres() { //Mr. White
+         ArrayList <Book> newBooks = new ArrayList <Book>(library.size()); //43
+         String [] genres = {"History", "Biography", "Fiction", "Nonfiction","Fantasy","Romance","Sci-Fi"};
+
+         for (int i= 0; i <genres.length; i++){ //genres.length
+             for(int j = 0; j<library.size(); j++){ //
+                 if (library.get(j).genre.equals(genres[i])){
+                     newBooks.add(library.get(j));
 
                  }
              }
-
          }
-                 //sci fi, non fiction, biography, history, fiction, fantasy, romance
 
-             //public ArrayList<Book> isHardCover(ArrayList<Book> books){
-             //put in an array and sort whether true or false?
 
-             // }
-         return books;
+
+         library=newBooks;
+
      }
 	
 	public ArrayList<Book> sortByHardcover(ArrayList<Book> books) {
