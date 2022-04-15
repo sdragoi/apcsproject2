@@ -90,34 +90,21 @@ public class Library {
          return books;
 
      }
-	public ArrayList<Book> sortByGenre(ArrayList<Book> books) {
-         for (int i = 0; i < books.size()-1; i++) {
-             for (int j = 0; j < books.size() - 1; j++) {
-                 if (books.get(j).genre.charAt(0) > books.get(j + 1).genre.charAt(0)) {
-                     Book temp = books.set(j, books.get(j + 1));
-                     books.set(j + 1, temp);
-                 } else if ((books.get(j).genre.charAt(0) == books.get(j + 1).genre.charAt(0))) {
-                     if (books.get(j).genre.charAt(1) > books.get(j + 1).genre.charAt(1)) {
-                         Book temp = books.set(j, books.get(j + 1));
-                         books.set(j + 1, temp);
-                     } else if (books.get(j).genre.charAt(1) == books.get(j + 1).genre.charAt(1)) {
-                         if (books.get(j).genre.charAt(2) > books.get(j + 1).genre.charAt(2)) {
-                             Book temp = books.set(j, books.get(j + 1));
-                             books.set(j + 1, temp);
-                         }
-                     }
-
+	public ArrayList<Book> sortByGenresDani(ArrayList<Book> books) {
+         ArrayList <Book> newBooks = new ArrayList <Book>(books.size()); //43
+         String [] genres = {"History", "Biography", "Fiction", "Nonfiction","Fantasy","Romance","Sci-fi"};
+         ArrayList<Book> genress = new ArrayList<Book>(books.size());
+         for (int i= 0; i <genress.size(); i++){ //genres.length
+             for(int j = 0; j<books.size(); j++){ //
+                 if (books.get(j).genre == (genress.get(i).genre)){
+                     newBooks.add(books.get(j));
                  }
              }
-
          }
-                 //sci fi, non fiction, biography, history, fiction, fantasy, romance
 
-             //public ArrayList<Book> isHardCover(ArrayList<Book> books){
-             //put in an array and sort whether true or false?
 
-             // }
-         return books;
+
+         return newBooks;
      }
 
 }
