@@ -21,7 +21,7 @@ public class Library {
 			this.sortByHardcover(library);
 			break;
 		case"genre":
-			this.sortByGenre(library);
+			this.sortbyGenre(library);
 			break;
 		}
 	}
@@ -114,6 +114,41 @@ public class Library {
 
          library=newBooks;
 
+     }
+     
+     //fiction, history, fantasy, romance, biography, nonfiction, sci-fi
+     
+     public ArrayList<Book> sortbyGenre(ArrayList<Book> books){
+    	 for (int i = 0; i < books.size()-1; i++) {
+    		 for (int j = 0; j < books.size() -1 ; j++) {
+    			 if (books.get(j).genre == "Sci-Fi") {
+    				 Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+    			 }
+    			 else if (books.get(j).genre == "Nonfiction" && books.get(j+1).genre != "Sci-Fi") {
+    				 Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+    			 }
+    			 else if (books.get(j).genre == "Biography" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction") {
+    				 Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+    			 }
+    			 else if (books.get(j).genre == "Romance" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Biography") {
+    				 Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+    			 }
+    			 else if (books.get(j).genre == "Fantasy" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Romance" && books.get(j+1).genre != "Biography") {
+    				 Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+    			 }
+    			 else if (books.get(j).genre == "History" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Romance" && books.get(j+1).genre != "Biography" && books.get(j+1).genre != "Fantasy") {
+    				 Book temp = books.set(j, books.get(j + 1));
+                     books.set(j + 1, temp);
+    			 }
+    			
+    		 }
+    	 }
+    	 return books;
      }
 	
 	public ArrayList<Book> sortByHardcover(ArrayList<Book> books) {

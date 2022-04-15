@@ -226,20 +226,86 @@ public class Tester {
 		}
 		
 		else if (action.equalsIgnoreCase("r")) {
-			Scanner assign = new Scanner(System.in);
-			String assignBy;
+			Scanner assignS = new Scanner(System.in);
+			String assignByS;
 			do {
-			    System.out.println("Would you like to sort by title, author, is hardcover, or genre? Please reply with t, a, h, or g. ");
+			    System.out.println("You may assign students to books based on one attribute of each. ");
+			    System.out.println("What would you like to assign students by: last name, first name, GPA, grade in the class, or favorite subject? Please reply with ln, fn, gpa, gr, or sub. ");
+			    while (!input.hasNext()) {
+			        System.out.println("Please reply with ln, fn, gpa, gr, or sub. ");
+			        input.next(); 
+			    }
+			    assignByS = input.next();
+			    if (assignByS.equalsIgnoreCase("ln") || assignByS.equalsIgnoreCase("fn") || assignByS.equalsIgnoreCase("gpa") || assignByS.equalsIgnoreCase("gr") || assignByS.equalsIgnoreCase("sub"))
+			    	break;
+			} while (!(assignByS.equalsIgnoreCase("ln") || assignByS.equalsIgnoreCase("fn") || assignByS.equalsIgnoreCase("gpa") || assignByS.equalsIgnoreCase("gr") || assignByS.equalsIgnoreCase("sub"))); 
+			
+			Scanner assignB = new Scanner(System.in);
+			String assignByB;
+			do {
+			    System.out.println("What would you like to assign books by: title, author, is hardcover, or genre? Please reply with t, a, h, or g. ");
 			    while (!input.hasNext()) {
 			        System.out.println("Please reply with t, a, h, or g. ");
 			        input.next(); 
 			    }
-			    assignBy = input.next();
-			    //if (assignBy.equalsIgnoreCase("t") || assignBy.equalsIgnoreCase("a") || assignBy.equalsIgnoreCase("h") || assignBy.equalsIgnoreCase("g"))
-			    	break; 
-			}while(true);
-		};
-	}
+			    assignByB = input.next();
+			    if (assignByB.equalsIgnoreCase("t") || assignByB.equalsIgnoreCase("a") || assignByB.equalsIgnoreCase("h") || assignByB.equalsIgnoreCase("g"))
+			    	break;
+			} while (!(assignByB.equalsIgnoreCase("t") || assignByB.equalsIgnoreCase("a") || assignByB.equalsIgnoreCase("h") || assignByB.equalsIgnoreCase("g")));
+			
+			switch(assignByS) {
+			case "ln":
+				english.sortBy("lastName");
+				switch(assignByB) {
+				case "t":
+					bookstore.sortBy("title");
+				case "a":
+					bookstore.sortBy("author");
+				case "h":
+					bookstore.sortBy("isHardcover");
+				case "g":
+					bookstore.sortBy("genre");
+				}
+				break;
+			case "fn":
+				switch(assignByB) {
+				case "t":
+					bookstore.sortBy("title");
+				case "a":
+					bookstore.sortBy("author");
+				case "h":
+					bookstore.sortBy("isHardcover");
+				case "g":
+					bookstore.sortBy("genre");
+				}
+				break;
+			case "gpa":
+				switch(assignByB) {
+				case "t":
+				case "a":
+				case "h":
+				case "g":
+				}
+				break;
+			case "gr":
+				switch(assignByB) {
+				case "t":
+				case "a":
+				case "h":
+				case "g":
+				}
+				break;
+			case "sub":
+				switch(assignByB) {
+				case "t":
+				case "a":
+				case "h":
+				case "g":
+				}
+				break;
+			}
+		}
+}
 }
 		
 
