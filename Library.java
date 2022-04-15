@@ -90,13 +90,13 @@ public class Library {
          return books;
 
      }
-	public void printListOfBooks(){
+	public void printListOfBookGenres(){
          for (int i =0; i<library.size(); i++){
              System.out.println(library.get(i).genre);
          }
      }
 
-     public void sortByGenresWhite() {
+     public void sortByGenres() { //Mr. White
          ArrayList <Book> newBooks = new ArrayList <Book>(library.size()); //43
          String [] genres = {"History", "Biography", "Fiction", "Nonfiction","Fantasy","Romance","Sci-Fi"};
 
