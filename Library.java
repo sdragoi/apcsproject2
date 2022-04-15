@@ -129,19 +129,25 @@ public class Library {
     				 Book temp = books.set(j, books.get(j + 1));
                      books.set(j + 1, temp);
     			 }
-    			 else if (books.get(j).genre == "Biography" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction") {
+    			 else if (books.get(j).genre == "Biography" && books.get(j+1).genre != "Sci-Fi" 
+    					 && books.get(j+1).genre != "Nonfiction") {
     				 Book temp = books.set(j, books.get(j + 1));
                      books.set(j + 1, temp);
     			 }
-    			 else if (books.get(j).genre == "Romance" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Biography") {
+    			 else if (books.get(j).genre == "Romance" && books.get(j+1).genre != "Sci-Fi" 
+    					 && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Biography") {
     				 Book temp = books.set(j, books.get(j + 1));
                      books.set(j + 1, temp);
     			 }
-    			 else if (books.get(j).genre == "Fantasy" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Romance" && books.get(j+1).genre != "Biography") {
+    			 else if (books.get(j).genre == "Fantasy" && books.get(j+1).genre != "Sci-Fi" 
+    					 && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Romance" 
+    					 && books.get(j+1).genre != "Biography") {
     				 Book temp = books.set(j, books.get(j + 1));
                      books.set(j + 1, temp);
     			 }
-    			 else if (books.get(j).genre == "History" && books.get(j+1).genre != "Sci-Fi" && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Romance" && books.get(j+1).genre != "Biography" && books.get(j+1).genre != "Fantasy") {
+    			 else if (books.get(j).genre == "History" && books.get(j+1).genre != "Sci-Fi" 
+    					 && books.get(j+1).genre != "Nonfiction" && books.get(j+1).genre != "Romance" 
+    					 && books.get(j+1).genre != "Biography" && books.get(j+1).genre != "Fantasy") {
     				 Book temp = books.set(j, books.get(j + 1));
                      books.set(j + 1, temp);
     			 }

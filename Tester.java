@@ -201,25 +201,29 @@ public class Tester {
 			case "t":
 				bookstore.sortBy("title");
 				for (int i = 0; i< library.size(); i++) {
-					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			case "a":
 				bookstore.sortBy("author");
 				for (int i = 0; i< library.size(); i++) {
-					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			case "h":
 				bookstore.sortBy("isHardcover");
 				for (int i = 0; i< library.size(); i++) {
-					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			case "g":
 				bookstore.sortBy("genre");
 				for (int i = 0; i< library.size(); i++) {
-					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre + "; isHardcover? " + library.get(i).isHardcover);
+					System.out.println(library.get(i).title + " by " + library.get(i).author + ". Genre: " + library.get(i).genre 
+							+ "; isHardcover? " + library.get(i).isHardcover);
 				}
 				break;
 			}
@@ -236,9 +240,11 @@ public class Tester {
 			        input.next(); 
 			    }
 			    assignByS = input.next();
-			    if (assignByS.equalsIgnoreCase("ln") || assignByS.equalsIgnoreCase("fn") || assignByS.equalsIgnoreCase("gpa") || assignByS.equalsIgnoreCase("gr") || assignByS.equalsIgnoreCase("sub"))
+			    if (assignByS.equalsIgnoreCase("ln") || assignByS.equalsIgnoreCase("fn") || assignByS.equalsIgnoreCase("gpa") 
+			    		|| assignByS.equalsIgnoreCase("gr") || assignByS.equalsIgnoreCase("sub"))
 			    	break;
-			} while (!(assignByS.equalsIgnoreCase("ln") || assignByS.equalsIgnoreCase("fn") || assignByS.equalsIgnoreCase("gpa") || assignByS.equalsIgnoreCase("gr") || assignByS.equalsIgnoreCase("sub"))); 
+			} while (!(assignByS.equalsIgnoreCase("ln") || assignByS.equalsIgnoreCase("fn") || assignByS.equalsIgnoreCase("gpa") 
+						|| assignByS.equalsIgnoreCase("gr") || assignByS.equalsIgnoreCase("sub"))); 
 			
 			Scanner assignB = new Scanner(System.in);
 			String assignByB;
@@ -249,9 +255,11 @@ public class Tester {
 			        input.next(); 
 			    }
 			    assignByB = input.next();
-			    if (assignByB.equalsIgnoreCase("t") || assignByB.equalsIgnoreCase("a") || assignByB.equalsIgnoreCase("h") || assignByB.equalsIgnoreCase("g"))
+			    if (assignByB.equalsIgnoreCase("t") || assignByB.equalsIgnoreCase("a") || assignByB.equalsIgnoreCase("h") 
+			    		|| assignByB.equalsIgnoreCase("g"))
 			    	break;
-			} while (!(assignByB.equalsIgnoreCase("t") || assignByB.equalsIgnoreCase("a") || assignByB.equalsIgnoreCase("h") || assignByB.equalsIgnoreCase("g")));
+			} while (!(assignByB.equalsIgnoreCase("t") || assignByB.equalsIgnoreCase("a") || assignByB.equalsIgnoreCase("h") 
+						|| assignByB.equalsIgnoreCase("g")));
 			
 			switch(assignByS) {
 			case "ln":
@@ -282,17 +290,25 @@ public class Tester {
 			case "gpa":
 				switch(assignByB) {
 				case "t":
+					bookstore.sortBy("title");
 				case "a":
+					bookstore.sortBy("author");
 				case "h":
+					bookstore.sortBy("isHardcover");
 				case "g":
+					bookstore.sortBy("genre");
 				}
 				break;
 			case "gr":
 				switch(assignByB) {
 				case "t":
+					bookstore.sortBy("title");
 				case "a":
+					bookstore.sortBy("author");
 				case "h":
+					bookstore.sortBy("isHardcover");
 				case "g":
+					bookstore.sortBy("genre");
 				}
 				break;
 			case "sub":
