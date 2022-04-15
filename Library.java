@@ -18,6 +18,7 @@ public class Library {
 			this.sortByAuthor(library);
 			break;
 		case "isHardcover":
+			this.sortByHardcover(library);
 			break;
 		case"genre":
 			this.sortByGenre(library);
@@ -119,5 +120,20 @@ public class Library {
              // }
          return books;
      }
+	
+	public ArrayList<Book> sortByHardcover(ArrayList<Book> books) {
+        for (int i = 0; i < books.size()-1; i++) {
+            for (int j = 0; j < books.size() - 1; j++) {
+                if (books.get(j).isHardcover) {
+                    Book temp = books.set(j, books.get(j + 1));
+                    books.set(j + 1, temp);
+                } 
+
+            }
+
+        }
+        return books;
+	}
+	
 
 }

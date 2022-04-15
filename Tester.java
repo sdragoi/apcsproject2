@@ -225,17 +225,22 @@ public class Tester {
 			}
 		}
 		
-		Scanner target = new Scanner(System.in);
-		Long targetPattern;
-		do {
-			System.out.println("Please provide a target digit pattern between 6 and 12 digits. ");
-			while (!target.hasNextLong()) {
-				System.out.println("Your target pattern should only contain the digits 0-9. ");
-				target.next();
-			}
-			targetPattern = target.nextLong();
-		} while (targetPattern.toString().length() > 12 || targetPattern.toString().length() < 6);
-				
+		else if (action.equalsIgnoreCase("r")) {
+			Scanner assign = new Scanner(System.in);
+			String assignBy;
+			do {
+			    System.out.println("Would you like to sort by title, author, is hardcover, or genre? Please reply with t, a, h, or g. ");
+			    while (!input.hasNext()) {
+			        System.out.println("Please reply with t, a, h, or g. ");
+			        input.next(); 
+			    }
+			    assignBy = input.next();
+			    //if (assignBy.equalsIgnoreCase("t") || assignBy.equalsIgnoreCase("a") || assignBy.equalsIgnoreCase("h") || assignBy.equalsIgnoreCase("g"))
+			    	break; 
+			}while(true);
+		};
 	}
-
 }
+		
+
+
